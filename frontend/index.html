@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionSort</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>VisionSort</h1>
+
+    <p>Upload an image of waste.</p>
+
+    <input type="file" id="imageInput">
+
+  <button type="button" onclick="predict()">Predict</button>
+  <button type="button" onclick="toggleDashboard()">View Dashboard</button>
+
+    <br><br>
+
+  <img id="preview" width="300" alt="Preview">
+
+    <div id="result"></div>
+    <div id="dashboard" style="display:none; margin-top:30px;">
+        <h2>Prediction Dashboard</h2>
+        <p id="totalImages"></p>
+        <canvas id="pieChart" width="300" height="300"></canvas>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+    --charcoal:#1F2421;
+    --sage:#6B8F71;
+    --sage-dark:#557560;
+    --amber:#E3A857;
+    --off-white:#F4F1EA;
+    --slate:#4A6670;
+    --line:#DAD5C7;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--off-white);
+    font-family:'Inter', sans-serif;
+    color:var(--charcoal);
+    margin:0;
+    padding:0;
+}
+
+/* Top strip, like a control-panel header bar */
+body::before{
+    content:"";
+    display:block;
+    height:6px;
+    background:repeating-linear-gradient(
+        45deg,
+        var(--amber),
+        var(--amber) 12px,
+        var(--charcoal) 12px,
+        var(--charcoal) 24px
+    );
+}
+
+.container{
+    width:520px;
+    margin:60px auto;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    box-shadow:0 12px 30px rgba(31,36,33,0.10);
+    overflow:hidden;
+    text-align:center;
+}
+
+h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    background:var(--charcoal);
+    color:var(--off-white);
+    margin:0;
+    padding:28px 30px 22px;
+    font-size:30px;
+}
+
+h1::after{
+    content:"Automated Waste Classification";
+    display:block;
+    font-family:'Inter', sans-serif;
+    text-transform:none;
+    letter-spacing:0;
+    font-weight:400;
+    font-size:13px;
+    color:var(--sage);
+    margin-top:6px;
+}
+
+.container > p{
+    font-size:14px;
+    color:var(--slate);
+    text-align:center;
+    margin:24px 0 18px;
+}
+
+input[type="file"]{
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    color:var(--slate);
+    display:block;
+    margin:0 auto 16px;
+}
+
+button{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    font-size:13px;
+    padding:12px 24px;
+    margin:0 6px;
+    cursor:pointer;
+    border:none;
+    border-radius:3px;
+    background:var(--sage);
+    color:#fff;
+    transition:background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover{
+    background:var(--sage-dark);
+}
+
+button:active{
+    transform:scale(0.97);
+}
+
+button:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:2px;
+}
+
+button[onclick="toggleDashboard()"]{
+    background:var(--slate);
+}
+
+button[onclick="toggleDashboard()"]:hover{
+    background:#3a5159;
+}
+
+img#preview{
+    width:300px;
+    display:block;
+    margin:22px auto 0;
+    border:1px solid var(--line);
+    border-radius:3px;
+}
+
+#result{
+    margin:24px 30px 4px;
+    padding:18px 20px;
+    background:var(--off-white);
+    border-left:4px solid var(--sage);
+    border-radius:2px;
+    text-align:left;
+}
+
+#result:empty{
+    display:none;
+}
+
+#result h2{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    margin:0 0 8px;
+    font-size:22px;
+    color:var(--charcoal);
+}
+
+#result p{
+    margin:4px 0;
+    font-size:14px;
+    color:var(--slate);
+}
+
+#result b{
+    color:var(--charcoal);
+}
+
+#dashboard{
+    margin:0 30px 30px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+}
+
+#dashboard h2{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    font-size:18px;
+    margin:0 0 4px;
+    color:var(--charcoal);
+}
+
+#totalImages{
+    font-size:13px;
+    color:var(--slate);
+    margin:0 0 18px;
+}
+
+#pieChart{
+    display:block;
+    margin:0 auto;
+}
+
+.footer-pad{
+    height:8px;
+    background:var(--sage);
+}
